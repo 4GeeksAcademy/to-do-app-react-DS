@@ -9,9 +9,6 @@ const App = () => {
 			<div className="to-do letter">
 				{/* Notes To-do */}
 				<TodoList />
-
-				{/* Items left To-do */}
-				<h6 className="items-left">5 item left</h6>
 			</div>
 		</div>
 	);

@@ -4,22 +4,31 @@ const TodoList = () => {
 
     const [todos, setTodos] = useState([]);
     const [task, setTask] = useState("")
+    const [noteIndex, setNoteIndex] = useState(0);
 
     const addTodos = () => {
         const newTodos = [...todos]
         newTodos.push(task)
         setTodos(newTodos)
         setTask("")
+        setNoteIndex(noteIndex + 1)
     }
 
+    const deleteTodos = (index) => {
+        const newTodos = [...todos]
+        newTodos.splice(index, 1)
+        setTodos(newTodos)
+        setNoteIndex(noteIndex - 1)
+
+    }
 
     return (
         <>
             {/* Input para añadir notas */}
 
             <div className="container-input">
-                <input className="input-To-Do" type="text" value={task} onChange={(e) => setTask(e.target.value)} />
-                <button className='btn-To-Do btn btn-warning btn-sm' onClick={addTodos}>Add Task</button>
+                <input className="input-To-Do" placeholder="What needs to be done?" type="text" value={task} onChange={(e) => setTask(e.target.value)} />
+                <button className='btn-To-Do' onClick={addTodos}>Add Task</button>
             </div>
 
             {/* contenedor notas */}
@@ -27,10 +36,20 @@ const TodoList = () => {
                 {
                     // notas
                     todos.length > 0 &&
-                    todos.map((task) => {
-                        return <div className='note'>{task}</div>
+                    todos.map((task, index) => {
+                        return (
+                            <div className="items">
+                                <div key={index} className='note'>{task}</div>
+                                <i
+                                    class="item--right fa-regular fa-circle-xmark"
+                                    onClick={() => deleteTodos(index)}
+                                ></i>
+                            </div>
+                        )
                     })
+
                 }
+                <h6 className="note-index">{noteIndex} item left</h6>
 
             </div>
         </>

@@ -28,19 +28,46 @@ body {
 
 .input-To-Do {
     border: none;
-    padding: 15px 40px;
     width: 70%;
+    padding: 0px 10px;
 }
 
 .btn-To-Do {
     width: 30%;
+    min-height: 50px;
+    border: lightblue 1px solid;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
+    background: rgba(173, 216, 230, 0.3);
+}
+
+.notes {
+    display: block;
 }
 
 .note {
     border-top: lightblue 1px solid;
-    padding: 15px 40px;
     width: 100%;
+    padding: 15px 10px;
     color: rgba(0, 0, 0, 0.7);
+}
+
+.note-index {
+    color: rgb(119, 180, 201);
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.item--right {
+    color: rgba(173, 216, 230, 0.8);
+}
+
+.item--right:active {
+    color: rgba(255, 0, 0, 0.5);
 }
 
 h6 {
@@ -60,6 +87,7 @@ h6 {
     position: relative;
     width: 80%;
   }
+
   .letter:before, .letter:after {
     content: "";
     height: 98%;
@@ -67,6 +95,7 @@ h6 {
     width: 100%;
     z-index: -1;
   }
+  
   .letter:before {
     background: #fafafa;
     box-shadow: 0 0 8px rgba(0,0,0,0.2);
@@ -74,6 +103,7 @@ h6 {
     top: 4px;
     transform: rotate(-2.5deg);
   }
+
   .letter:after {
     background: #f6f6f6;
     box-shadow: 0 0 3px rgba(0,0,0,0.2);
