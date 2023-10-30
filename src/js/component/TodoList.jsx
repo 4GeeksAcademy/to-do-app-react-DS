@@ -8,10 +8,14 @@ const TodoList = () => {
 
     const addTodos = () => {
         const newTodos = [...todos]
-        newTodos.push(task)
-        setTodos(newTodos)
-        setTask("")
-        setNoteIndex(noteIndex + 1)
+        if (task === "") {
+            return;
+        } else {
+            newTodos.push(task)
+            setTodos(newTodos)
+            setTask("")
+            setNoteIndex(noteIndex + 1)
+        }
     }
 
     const deleteTodos = (index) => {

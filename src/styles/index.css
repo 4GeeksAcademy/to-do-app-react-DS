@@ -35,10 +35,11 @@ body {
 .btn-To-Do {
     width: 30%;
     min-height: 50px;
-    border: lightblue 1px solid;
+    border: rgba(173, 216, 230, 0.5) 1px solid;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.7);
-    background: rgba(173, 216, 230, 0.3);
+    background: rgba(173, 216, 230, 0.1);
+    margin: 5px 0;
 }
 
 .notes {
